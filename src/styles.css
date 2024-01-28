@@ -47,6 +47,7 @@
     
     right: 40%;
     border-style: double;
+    
     /* position: relative;
     top:  40px;
     left: 800px; */
@@ -123,4 +124,8 @@
     /* color: #fff; */
     text-align: center;
     /* background: #000 */
+  }
+
+  .resumePage {
+    text-align: center;
   }

@@ -71,8 +71,8 @@ export default class Admin extends Component {
 
         return (
             <div className="admin">
-                <p>admin Page</p>
-                <button className="addBtn" onClick={this.addItemPage}>Add</button>
+                <p>admin Page - in this page you can add items to your store</p>
+                <button className="addBtn" onClick={this.addItemPage}>Add Item</button>
                 {this.state.seen ? <AddPage toggle={this.addItemPage} sendItem={this.addItemToTable}/> : null}
                 {this.state.edit ? <EditPage toggle={this.closeEdit} sendEditItem={this.editItem}/> : null}
                 <table className="table" border="1">

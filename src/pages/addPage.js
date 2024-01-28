@@ -34,7 +34,7 @@ export default class AddPage extends Component {
                     Title: <input type="text" onChange={(e) => this.setState({title : e.target.value})} /> <br/>
                     Price: <input type="number" onChange={(e) => this.setState({price : e.target.value})} /> <br/>
                     Description: <input type="text" onChange={(e) => this.setState({description : e.target.value})} /> <br/> 
-                    Image: <input type="text" onChange={(e) => this.setState({image : e.target.value})} /> <br/> <br/>
+                    Image: <input type="text" placeholder='insert image online address' onChange={(e) => this.setState({image : e.target.value})} /> <br/> <br/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
