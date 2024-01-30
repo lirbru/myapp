@@ -1,0 +1,17 @@
+name: Deploy to App Engine
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to trigger the deployment from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT }}
+          service_account: ${{ secrets.GCP_SA_KEY }}
+      - run: gcloud app deploy
