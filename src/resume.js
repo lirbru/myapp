@@ -12,7 +12,7 @@ export default class resume extends Component {
             <div className='resumePage'>
                 <h1 >Liran Bruchim</h1>
                 <p>Welcome to my app store</p>
-                <p>For this page I used Google Cloud Project infrastructure with Git Actions for the deployment</p>
+                <p>For this page I used Google Cloud Project infrastructure with Git Actions for the deployment - 2</p>
                 <p>In this app you can add items to your admin page and sell it in the home page</p>
                 
                 <p>please continue by pressing the "Admin store" button </p>
