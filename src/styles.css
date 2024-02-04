@@ -1,10 +1,24 @@
 .addBtn {
-    text-align: center;
-    color: blue;
     position: absolute;
     right: 30px;
+    
+    width: 30px; /* Adjust width as needed */
+    height: 30px;
+    background-color: #4477ae; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 0; /* Ensure sharp corners */
+    text-align: center;
+    line-height: center; /* Vertically center text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Hover animation */
+    
 }
 
+.addBtn:hover {
+    background-color: #45474a; /* Change background color on hover */
+}
 .addPage {
     
     position: fixed;
@@ -41,12 +55,16 @@
 
 .admin {
     background-color: blueviolet;
+    background-image: linear-gradient(to bottom right, purple, lavender);
 }
 
 .table {
     
     right: 40%;
     border-style: double;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
     
     /* position: relative;
     top:  40px;

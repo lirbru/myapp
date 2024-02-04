@@ -35,8 +35,7 @@ export default class home extends Component {
     openCart = () => {
         this.setState({...this.state, cartPage : !this.state.cartPage});
     }
-
-
+    
     render() {
         
         const items = this.state.table.map((item, index) => {
