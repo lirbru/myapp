@@ -17,6 +17,21 @@ export default class home extends Component {
         let table = JSON.parse(sessionStorage.getItem('table'));
         this.setState({table : table});
     }
+    removeFromCart = (index) => {
+        //console.log("remove from cart home comp", index);
+        let new_cart = this.state.cart;
+        const item = new_cart.splice(index, 1);
+        const price = item[0][0].price;
+        const tempSum = this.state.totalSum - price;
+        const tempNumberOfItems = +this.state.numberOfItems;
+        this.setState({...this.state, cart : new_cart, totalSum : tempSum, numberOfItems : tempNumberOfItems - 1 });
+    }
+    payForCart = () => {
+        console.log("pay fro cart");
+        const new_cart = [];
+        this.setState({...this.state, cart : new_cart, totalSum : 0, numberOfItems : 0 });
+        alert("Thank you for your purchase. Hope to see you again");
+    }
 
     addToCart = (e) => {
         const tempTable = [...this.state.table];
@@ -60,7 +75,10 @@ export default class home extends Component {
                     {this.state.numberOfItems > 0? this.state.numberOfItems : null}
                 </button>
                 <div >
-                    {this.state.cartPage? <CartPage cart={this.state.cart} total={this.state.totalSum}/> : null}
+                    {this.state.cartPage? <CartPage cart={this.state.cart} 
+                                            total={this.state.totalSum} 
+                                            removeFunc={this.removeFromCart}
+                                            payFromHome={this.payForCart} /> : null}
                 </div>
                <div className='grid-container'>
                     {items}
