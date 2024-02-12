@@ -60,6 +60,7 @@ export default class Admin extends Component {
             return (
                 <tr key={index}>
                     <td>{item.title}</td>
+                    <td>{item.description}</td>
                     <td>{`${item.price}$`}</td>
                     <td>
                         <button id = {index} onClick={this.openEdit}>edit</button>
@@ -73,12 +74,14 @@ export default class Admin extends Component {
             <div className="admin">
                 <p>admin Page - in this page you can add items to your store</p>
                 <button className="addBtn" onClick={this.addItemPage} title="press to add item">+</button> 
-                {this.state.seen ? <AddPage toggle={this.addItemPage} sendItem={this.addItemToTable}/> : null}
-                {this.state.edit ? <EditPage toggle={this.closeEdit} sendEditItem={this.editItem}/> : null}
-                <table className="table" border="1">
+                <br/><br/>
+                {this.state.seen ? <AddPage toggle={this.addItemPage} sendItem={this.addItemToTable} /> : null}
+                {this.state.edit ? <EditPage toggle={this.closeEdit} sendEditItem={this.editItem} item={this.state.table[this.state.idToEdit]} /> : null}
+                <table id="adminTable" border="1">
                     <thead>
                         <tr>
                             <th>title</th>
+                            <th>Description</th>
                             <th>price</th>
                             <th>option</th>
                         </tr>

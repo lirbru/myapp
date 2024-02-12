@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 
 export default class EditPage extends Component {
-    constructor() {
+    constructor({item}) {
         super();
         this.state = {
-            title : "",
-            price : "",
-            description : "",
-            image : ""
+            title : item.title,
+            price : item.price,
+            description : item.description,
+            image : item.image
         }
+        
     }
     close = () => {
         this.props.toggle();
@@ -29,10 +30,10 @@ export default class EditPage extends Component {
         return (
             <div className="editPage">
                 <button className="close-btn" onClick={this.close}>close</button>
-                title : <input type="text"  name="title" onChange={this.handleChange}/> <br/>
-                price : <input type="number"  name="price" onChange={this.handleChange}/> <br/>
-                description : <input type="text"  name="description" onChange={this.handleChange}/> <br/> 
-                image : <input type="text"  name="image" onChange={this.handleChange}/> <br/> <br/>
+                title : <input type="text"  name="title" onChange={this.handleChange} defaultValue={this.state.title}/> <br/>
+                price : <input type="number"  name="price" onChange={this.handleChange} defaultValue={this.state.price}/> <br/>
+                description : <input type="text"  name="description" onChange={this.handleChange} defaultValue={this.state.description}/> <br/> 
+                image : <input type="text"  name="image" onChange={this.handleChange} defaultValue={this.state.image}/> <br/> <br/>
                 <button onClick={this.submit}>submit</button>
             </div>
         )
