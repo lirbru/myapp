@@ -3,6 +3,7 @@ import AddPage from './pages/addPage';
 import EditPage from './pages/editPage';
 import Home from './home'
 
+
 export default class Admin extends Component {
     constructor() {
         super();
