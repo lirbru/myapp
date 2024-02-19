@@ -57,6 +57,7 @@ export default class home extends Component {
     
     render() {
         let items = [];
+        let searchFlag = false;
         if (this.state.search === "") {
             items = this.state.table.map((item, index) => {
                 return(
@@ -74,29 +75,11 @@ export default class home extends Component {
             })
         }
         else {
-            // const searchKey = this.state.search.toLowerCase();
-            // items = this.state.table.filter((item, originalIndex) => {
-            //     const searchText = item.title.toLowerCase() + item.description.toLowerCase();
-            //     return (searchText.includes(searchKey));
-            // }).map((item, index) => { /////////////////////////////
-            //     return(
-            //         <div className='grid-item' key={index}>
-            //             <img className='image-item' src={item.image} alt={item.image} ></img> <br/> <br/>
-            //            <div className='grid-data'>
-            //                 Title - {item.title} <br/>
-            //                 Desc - {item.description} < br/>
-            //                 Price - {item.price} <br/> <br/>
-            //             </div>
-            //             <button onClick={this.addToCart} id={index}>Buy</button>
-
-            //         </div>
-            //     )
-            // })
-
             items = this.state.table.map((item,index) => {
                 const searchKey = this.state.search.toLowerCase();
                 const searchText = item.title.toLowerCase() + item.description.toLowerCase();
                 if (searchText.includes(searchKey)){
+                    searchFlag = true;
                     return(
                         <div className='grid-item' key={index}>
                             <img className='image-item' src={item.image} alt={item.image} ></img> <br/> <br/>
@@ -108,11 +91,13 @@ export default class home extends Component {
                             <button onClick={this.addToCart} id={index}>Buy</button>
 
                         </div>
-                )}
-                
+                )}   
             })
-
+            if (!searchFlag) {
+                items = <div className='no-match'><h1>Item not found</h1></div>
+            }
         }
+        
         return (
             <div>
                 <button className='cartBtn' onClick={this.openCart}>

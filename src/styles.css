@@ -331,3 +331,18 @@
     left: 0;
     z-index: 5;
 }
+
+.no-match{
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* To adjust vertical alignment in some cases */
+
+  text-align: center;
+  padding: 5px;
+  font-size: 1.7em; /* Adjust as needed */
+  color: #110404; /* Adjust as needed */
+  background-color: #898484; /* Adjust as needed */
+  border-radius: 30px; /* Adjust as needed */
+}
