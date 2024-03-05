@@ -93,7 +93,7 @@ export default class home extends Component {
                         </div>
                 )}   
             })
-            if (!searchFlag) {
+            if (!searchFlag) {      // item not found in serach
                 items = <div className='no-match'><h1>Item not found</h1></div>
             }
         }

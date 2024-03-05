@@ -26,8 +26,7 @@
     left: 0;
     width: 100%;
     height: 30vh;
-    background-color: cornflowerblue;
-
+    background-color: rgb(22, 181, 202);
     text-align: center;  
 }
 
@@ -54,8 +53,8 @@
 }
 
 .admin {
-    background-color: blueviolet;
-    background-image: linear-gradient(to bottom right, purple, lavender);
+    background-color: rgb(235, 233, 241);
+    background-image: linear-gradient(to bottom right, rgb(250, 250, 252), lavender);
 }
 
 /*///////////Items Table///////////////*/
@@ -74,15 +73,15 @@
   
 }
 
-#adminTable tr:nth-child(even){background-color: #db85c4;}
+#adminTable tr:nth-child(even){background-color: #e3e3f4;}
 
-#adminTable tr:hover {background-color: #ddd;}
+#adminTable tr:hover {background-color: #827e7ea4;}
 
 #adminTable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #919e99;
+  background-color: #383b38;
   color: white;
   text-align: center;  
   margin-left: auto;
@@ -94,7 +93,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    background-color: #c3c7cb;
     padding: 10px;
     grid-column-gap: 0px;
     grid-row-gap: 10px;
@@ -102,6 +101,7 @@
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    
     width: 230px;
     font-size: 20px;
     text-align: center;
@@ -345,4 +345,21 @@
   color: #110404; /* Adjust as needed */
   background-color: #898484; /* Adjust as needed */
   border-radius: 30px; /* Adjust as needed */
+}
+
+/*Background*/
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 0, 0, 0.716 ); /* Darken with transparency */
+ /* transition: opacity 0.3s ease-in-out; /* Smooth transition */
+   /* opacity: 0.5;  */
+}
+
+.background-overlay.dimmed {
+  opacity: 0.7; /* Opacity when the top component is rendered */
 }

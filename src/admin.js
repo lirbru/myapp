@@ -72,12 +72,21 @@ export default class Admin extends Component {
         })
 
         return (
-            <div className="admin">
+            <div className={this.state.seen || this.state.edit ? "background-overlay" : "admin"}>
                 <p>admin Page - in this page you can add items to your store</p>
                 <button className="addBtn" onClick={this.addItemPage} title="press to add item">+</button> 
                 <br/><br/>
+
+                 
+                
+               
+
                 {this.state.seen ? <AddPage toggle={this.addItemPage} sendItem={this.addItemToTable} /> : null}
                 {this.state.edit ? <EditPage toggle={this.closeEdit} sendEditItem={this.editItem} item={this.state.table[this.state.idToEdit]} /> : null}
+                
+                
+                
+
                 <table id="adminTable" border="1">
                     <thead>
                         <tr>
